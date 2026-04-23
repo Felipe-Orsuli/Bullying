@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combate ao Bullying com IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .ia-demo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea, button {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Combate ao Bullying com Inteligência Artificial</h1>
+        <p>Usando tecnologia para prevenir e denunciar atos de bullying</p>
+    </header>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#denuncia">Denúncia</a>
+        <a href="#ia">IA Anti-Bullying</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="sobre">
+        <h2>Sobre o Projeto</h2>
+        <p>
+            Nosso objetivo é criar um ambiente seguro, utilizando inteligência artificial para identificar comportamentos abusivos e prevenir o bullying online e offline.
+        </p>
+    </section>
+
+    <section id="denuncia">
+        <h2>Denuncie um Caso</h2>
+        <p>Se você presenciou ou sofreu bullying, use o formulário abaixo para enviar uma denúncia.</p>
+        <form>
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea placeholder="Descreva o incidente" rows="5" required></textarea>
+            <button type="submit">Enviar Denúncia</button>
+        </form>
+    </section>
+
+    <section id="ia">
+        <h2>IA Anti-Bullying</h2>
+        <p>
+            Experimente nossa ferramenta de análise: escreva uma mensagem e veja se nossa IA identifica possíveis comportamentos de bullying.
+        </p>
+        <div class="ia-demo">
+            <textarea id="mensagem" placeholder="Digite uma mensagem aqui..."></textarea>
+            <button onclick="analisarMensagem()">Analisar</button>
+            <p id="resultado"></p>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Para mais informações, entre em contato conosco pelo email: suporte@iabulling.org</p>
+    </section>
+
+    <footer>
+        &copy; 2026 Combate ao Bullying com IA. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        function analisarMensagem() {
+            const mensagem = document.getElementById('mensagem').value.toLowerCase();
+            const resultado = document.getElementById('resultado');
+            // Simulação básica de detecção de bullying
+            const palavrasChave = ["idiota", "burro", "hater", "nojento"];
+            let alerta = palavrasChave.some(palavra => mensagem.includes(palavra));
+            if(alerta) {
+                resultado.textContent = "⚠️ Atenção: Esta mensagem pode conter bullying!";
+                resultado.style.color = "red";
+            } else {
+                resultado.textContent = "✅ Nenhum indício de bullying detectado.";
+                resultado.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>
